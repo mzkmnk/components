@@ -1,13 +1,13 @@
 import { Component, type OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
 import { Aura } from 'primeng/themes/aura';
+import { MessageComponent } from './components/message/message.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, ButtonModule],
+	imports: [RouterOutlet, MessageComponent],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css',
 })
