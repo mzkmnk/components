@@ -5,6 +5,9 @@ module.exports = {
 	content: ['./src/**/*.{html,js,ts}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+			  },
       animation:{
         'x-shape-animation':'x-shape-keyframe 1.5s'
       },

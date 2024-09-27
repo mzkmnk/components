@@ -12,6 +12,7 @@ import { MessageComponent } from './components/message/message.component';
 	styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
+	/* primeNG -- start config -- */
 	config = inject(PrimeNGConfig);
 
 	constructor() {
@@ -21,4 +22,5 @@ export class AppComponent implements OnInit {
 	ngOnInit() {
 		this.config.ripple.set(true);
 	}
+	/* primeNG -- end config -- */
 }

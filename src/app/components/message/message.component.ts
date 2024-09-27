@@ -1,6 +1,7 @@
-import { Component, effect } from '@angular/core';
+import { Component, computed, effect, input, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, ObservedValueUnionFromArray, map, of, timer } from 'rxjs';
+import { Observable, ObservedValueUnionFromArray, map, of, single, timer } from 'rxjs';
+import { TMessageItems } from './message.type';
 
 @Component({
 	selector: 'app-message',
@@ -10,38 +11,5 @@ import { Observable, ObservedValueUnionFromArray, map, of, timer } from 'rxjs';
 	styleUrl: './message.component.css',
 })
 export class MessageComponent {
-	messagesItem: {
-		messageStart: {
-			text: string;
-			icon: string;
-			command: () => Observable<boolean>;
-		};
-		messageEnd: {
-			text: string;
-			icon: string;
-		};
-	} = {
-		messageStart: {
-			text: 'Wating....',
-			icon: 'pi pi-spin pi-spinner',
-			command: (): Observable<boolean> => {
-				return timer(4000).pipe(map(() => true));
-			},
-		},
-		messageEnd: {
-			text: 'Complted',
-			icon: 'pi pi-check',
-		},
-	};
-
-	isOk = toSignal(
-		this.messagesItem.messageStart.command().pipe(
-			map((value) => {
-				return value;
-			}),
-		),
-		{
-			initialValue: false,
-		},
-	);
+	messagesItem = input.required<TMessageItems>();
 }
