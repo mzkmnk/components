@@ -1,4 +1,4 @@
-import { animation, keyframes } from '@angular/animations';
+import plugin from 'tailwindcss/plugin';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -38,5 +38,15 @@ module.exports = {
       },
 		},
 	},
-	plugins: [require('tailwindcss-primeui')],
+	plugins: [
+		require('tailwindcss-primeui'),
+		plugin(function({ addBase , theme  }) {
+			addBase({
+			  h1 : { fontSize: theme('fontSize.3xl') },
+			  h2 : { fontSize: theme('fontSize.2xl') },
+			  h3 : { fontSize: theme('fontSize.xl') },
+			  h4 : { fontSize: theme('fontSize.lg') },
+			})
+		  })
+	],
 };

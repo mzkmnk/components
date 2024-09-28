@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessageComponent } from './message.component';
+import { WorkflowBuilderComponent } from './workflow-builder.component';
 
-describe('MessageComponent', () => {
-  let component: MessageComponent;
-  let fixture: ComponentFixture<MessageComponent>;
+describe('WorkflowBuilderComponent', () => {
+  let component: WorkflowBuilderComponent;
+  let fixture: ComponentFixture<WorkflowBuilderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MessageComponent]
+      imports: [WorkflowBuilderComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MessageComponent);
+    fixture = TestBed.createComponent(WorkflowBuilderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

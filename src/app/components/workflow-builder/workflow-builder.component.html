@@ -1,0 +1,16 @@
+<div class="h-full w-full" #workspace>
+    <div class="relative">
+        @for(workflowItem of $workflowItems();let index=$index; track index){
+            <div
+                class="absolute flex flex-col"
+                [style.top]="workflowItem.position.y+'px'"
+                [style.left]="workflowItem.position.x+'px'"
+                (mousedown)="onMouseDownWorkflowItem($event,index)"
+            >
+                <div class="border rounded-xl flex items-center justify-center w-64 h-24 bg-white p-3">
+                    <p>{{workflowItem.title}}</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
