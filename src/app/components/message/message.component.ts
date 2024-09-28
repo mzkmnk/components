@@ -1,8 +1,5 @@
-import { Component, computed, effect, input, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, ObservedValueUnionFromArray, map, of, single, timer } from 'rxjs';
+import { Component, input } from '@angular/core';
 import { TMessageItems } from './message.type';
-
 @Component({
 	selector: 'app-message',
 	standalone: true,

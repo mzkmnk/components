@@ -5,6 +5,8 @@ import {
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { provideHighlightOptions } from 'ngx-highlightjs';
+
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
@@ -16,5 +18,8 @@ export const appConfig: ApplicationConfig = {
 		provideStore(),
 		provideEffects(),
 		provideAnimationsAsync(),
+		provideHighlightOptions({
+			fullLibraryLoader: () => import('highlight.js')
+		})
 	],
 };
